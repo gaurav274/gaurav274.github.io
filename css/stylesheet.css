@@ -12,6 +12,12 @@
   margin-left:4.3333% !important;
 }
 
+.responsive {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+}
+
 .widthSet {
   max-width: 350px;
 }
