@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "About me"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -8,7 +8,15 @@ redirect_from:
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [academicpages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io).
+I'm a 2nd year Ph.D. student advised by [Dr. Joy Arulraj](https://www.cc.gatech.edu/~jarulraj/) in the School of Computer Science at [Georgia Institute of Technology](https://www.cc.gatech.edu/). 
+      
+I earned my Bachelor's degree in Computer Science from the Indian Institute of Technology, Kanpur, in 2017 and a Masters' degree from the Georgia Institute of Technology in 2021.
+
+Currently, I'm leading the research initiative of developing a Video Database Management System [(EVA)](https://github.com/georgia-tech-db/eva) at Georgia Tech Databases Lab.
+       
+        <!-- Also, I am actively contributing in the Systems for Artificial Intelligence Lab (SAIL) under the supervision of by <a href="https://www.cc.gatech.edu/~atumanov/"> Dr. Alexey Tumanov </a>. -->
+       
+I have interned at [Cloud SQL team at Google](https://cloud.google.com/sql) and SQL Optimization team at Snowflake.
 
 A data-driven personal website
 ======
