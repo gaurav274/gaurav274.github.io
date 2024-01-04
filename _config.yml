@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Gaurav Tarlok Kakkar"
   avatar           : "gtk.jpg"
-  bio              : "Ph.D. Student in Computer Science Georgia Tech"
+  bio              : "Ph.D. Candidate in Computer Science Georgia Tech"
   location         : "Atlanta"
   employer         :
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "https://scholar.google.com/citations?hl=en&user=l0uhbHIAAAAJ"
-  email            :
+  googlescholar    : "l0uhbHIAAAAJ"
+  email            : "gaurav21776@gmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -102,8 +102,8 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  linkedin         : "gtk1"
+  orcid            : "http://orcid.org/0000-0003-2750-5052"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
