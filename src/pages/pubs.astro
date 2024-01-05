@@ -1,0 +1,86 @@
+---
+import Toggle from '../components/Toggle.astro';
+import PublicationsGrid from '../components/PublicationsGrid.astro';
+import Card  from '../components/Card.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const papers = [{
+	title: "Seiden: Revisiting Query Processing in Video Database Systems",
+	authors: ["Gaurav Tarlok Kakkar*", "Jaeho Bang*", "Pramod Chunduri", "Subrata Mitra", "Joy Arulraj"],
+	pub: "VLDB 2023",
+	link: "https://doi.org/10.14778/3598581.3598599",
+	},
+	{
+		title: "EVA: A Symbolic Approach to Accelerating Exploratory Video Analytics with Materialized Views",
+		authors: ["Gaurav Tarlok Kakkar*", "Zhuangdi Xu*", "Joy Arulraj", "Umakishore Ramachandran"],
+		pub: "SIGMOD 2022",
+		link: "https://dl.acm.org/doi/abs/10.1145/3514221.3526142"
+	},
+
+	{
+		title: "EVA: An End-to-End Exploratory Video Analytics System",
+		authors: ["Gaurav Tarlok Kakkar", "et al."],
+		pub: "DEEM, SIGMOD 2023",
+		link: "https://dl.acm.org/doi/abs/10.1145/3595360.3595858"
+	},
+
+	{
+		title: "Interactive Demonstration of EVA",
+		authors: ["Gaurav Tarlok Kakkar", "Aryan Rajoria", "Myna Prasanna Kalluraya", "Ashmita Raju", "Jiashen Cao", "Kexin Rong", "Joy Arulraj"],
+		pub: "Demo Track, VLDB 2023",
+		link: "https://dl.acm.org/doi/abs/10.14778/3611540.3611626"
+	}
+	]
+---
+
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style lang="scss">
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+	padding:0rem;
+
+  }
+</style>
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+			
+			<h2>Papers</h2>
+
+			<ul >
+				{
+					papers.map((paper, index) => (
+						<Card 
+							url={paper.link}
+							title={paper.title}
+							pub={paper.pub}
+							authors={ 
+								paper.authors
+								.map((author) =>
+									author.includes("Gaurav")? `<strong>${author.trim()}</strong>`: author.trim()
+								)
+								.join(", ")
+							}
+						/>
+					)
+				)
+				}
+			</ul>
+
+
+			<div style="font-weight: lighter; font-style: italic;">* order decided based on a coin toss</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
