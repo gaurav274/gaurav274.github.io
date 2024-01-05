@@ -1,0 +1,71 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+    		<img width="200" height="100" src="/gtk.jpg" alt="😊" class="circle-img">
+			
+			
+			<h1>👋 Welcome!</h1>
+			<p>
+				I'm Gaurav Tarlok Kakkar, a computer science researcher and developer based out of Atlanta. My passion lies at the intersection of machine learning and data management, and I enjoy building systems that enhance the experiences of ML/DB practitioners.
+			</p>
+			<p>
+				
+				I'm currently pursuing my Ph.D. in databases at the Georgia Institute of Technology under the guidance of <a href="https://faculty.cc.gatech.edu/~jarulraj/"> Joy Arulraj </a>. Before this, I served as a Software Engineer at <a href="https://adobe.com/"> Adobe</a>. I contributed to the database query engine at <a href="https://www.snowflake.com/">Snowflake</a>, an in-memory columnar cache for PostgreSQL at <a href="https://google.com/">Google</a>, and engaged in research at <a href="https://research.adobe.com/">Adobe Research</a>. 
+			</p>
+			<p>
+				Before pursuing my Ph.D., I earned my master's degree at Georgia Tech and completed my bachelor's at the Indian Institute of Technology, Kanpur. During my master's program, my encounter with database internals prompted me to initiate the development of <a href="https://github.com/georgia-tech-db/evadb">EvaDB</a>, which forms the foundation of my Ph.D. thesis. 
+
+				At IIT Kanpur, I was honored with the prestigious Dr. Elizabeth & Dr. Varkey Cherian Award for the <a href="https://github.com/yadavdev/iitk-hostel-mess"> best undergraduate project </a>.
+			</p>
+
+			<h3>Research</h4>
+				I'm involved in the following projects:
+				
+				<ul class="ul1">
+					<li class="li1">
+						<a href="https://github.com/georgia-tech-db/evadb"> EvaDB: database system tailored for accelerating emerging AI apps. </a>
+					</li>
+					
+					
+					<li class="li1">
+						Adaptive Query Engine for LLM/vision workloads.
+					</li>
+
+					<li class="li1">
+						Model-Aware Storage Management for large scale video analytics.
+					</li>
+
+					<li class="li1">
+						<a href= "https://github.com/pchunduri6/rag-demystified" > LLM-powered retrieval-augmented generation (RAG) </a>
+					</li>
+
+					<li class="li1">
+						<a href="https://github.com/georgia-tech-db/seiden_submission">
+						Revisiting Query Processing for large scale video analytics
+						</a>
+					</li>
+				</ul>
+
+      
+
+			<h3>Get in Touch</h4>
+			<p>
+				You can get in touch with me via email at <a href="mailto:gtk@gatech.edu">gtk@gatech.edu</a>. Additionally, I'm active on <a href="https://twitter.com/GauravTKakkar" target="_blank">Twitter</a> and <a href="https://github.com/gaurav274" target="_blank">Github</a>.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>

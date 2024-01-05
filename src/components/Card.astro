@@ -1,0 +1,85 @@
+---
+interface Props {
+  url?: string
+  title?: string
+  pub?: string
+  authors?: string
+  children?: string | HTMLElement | HTMLElement[]
+}
+
+const { url = '#', title = 'Default title', pub = "ff", authors="" } = Astro.props
+---
+
+<div class="card">
+  <div class="card__content">  
+    <p>
+      <a href={url}>{title}</a>
+    </p>
+    <p>
+      {pub}
+    </p>
+	<p>
+    <Fragment set:html={authors} /> </p>
+  </div>
+  
+</div>
+
+
+
+<style is:global>
+  .card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    max-width: 60ch;
+    min-height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.15s ease-in-out;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    box-shadow: 0 0 0 0.1rem;
+  }
+
+  .card:focus-within a:focus {
+    text-decoration: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+
+  .card__content {
+    padding-left: 1rem;
+	padding-right: 1rem;
+  }
+
+  .card__content a {
+    text-decoration: none;
+  }
+
+  .card__content a:focus {
+    text-decoration: underline;
+  }
+
+  .card__content a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  
+  .card__content a:hover {
+	text-decoration: underline;
+	font-weight: bold;
+	transition: box-shadow 0.3s ease-in-out;
+	}
+
+	.card__content a::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+	  transition: inherit; /* Inherit the transition property from the link */
+	}
+</style>
