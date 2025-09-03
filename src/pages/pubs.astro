@@ -61,9 +61,18 @@ const papers = [{
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style lang="scss">
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
   .publications-container {
     max-width: 800px;
     margin: 0 auto;
+    width: 100%;
   }
 
   .publication-category {
@@ -84,6 +93,11 @@ const papers = [{
     background: #f8f9fa;
     border-radius: 6px;
     border-left: 4px solid var(--accent);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .publication-title {
@@ -132,7 +146,28 @@ const papers = [{
   
   @media (max-width: 480px) {
     main {
-      padding: 1.5em 1em;
+      padding: 3em 1em 1.5em 1em;
+      margin-top: 1em;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .publications-container {
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    .publication-category {
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    .publication-item {
+      width: 100%;
+      max-width: 100%;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     
     .publication-item {
@@ -159,7 +194,28 @@ const papers = [{
   
   @media (max-width: 360px) {
     main {
-      padding: 1em 0.8em;
+      padding: 2.5em 0.8em 1em 0.8em;
+      margin-top: 0.8em;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .publications-container {
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    .publication-category {
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    .publication-item {
+      width: 100%;
+      max-width: 100%;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     
     .publication-item {

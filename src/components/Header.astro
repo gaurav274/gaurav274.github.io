@@ -6,21 +6,18 @@ import ThemeToggle from './ThemeToggle.astro';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<h2><a href="/"></a></h2>
-		<h2><a href="/"></a></h2>
-		<h2><a href="/"></a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">About</HeaderLink>
-			<HeaderLink href="/pubs">Publications</HeaderLink>
-			<HeaderLink href="/cv">CV</HeaderLink>
+		<div class="nav-left">
+			<h2><a href="/">{SITE_TITLE}</a></h2>
 		</div>
-		<h2><a href="/"></a></h2>
-		<h2><a href="/"></a></h2>		<h2><a href="/"></a></h2>
-		<h2><a href="/"></a></h2>
-		<h2><a href="/"></a></h2>
-		<h2><a href="/"></a></h2>
-		<div class="social-links">
+		<div class="nav-center">
+			<div class="internal-links">
+				<HeaderLink href="/">About</HeaderLink>
+				<HeaderLink href="/pubs">Publications</HeaderLink>
+				<HeaderLink href="/cv">CV</HeaderLink>
+			</div>
+		</div>
+		<div class="nav-right">
+			<div class="social-links">
 			<a href="https://twitter.com/GauravTKakkar" target="_blank">
 				<span class="sr-only">Follow Gaurav on Twitter</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32">
@@ -66,6 +63,25 @@ import ThemeToggle from './ThemeToggle.astro';
 		width: 100%;
 		max-width: 100%;
 	}
+	
+	.nav-left, .nav-center, .nav-right {
+		display: flex;
+		align-items: center;
+	}
+	
+	.nav-left {
+		flex: 1;
+	}
+	
+	.nav-center {
+		flex: 2;
+		justify-content: center;
+	}
+	
+	.nav-right {
+		flex: 1;
+		justify-content: flex-end;
+	}
 	nav a {
 		padding: 1em 0.5em;
 		color: var(--black);
@@ -88,8 +104,26 @@ import ThemeToggle from './ThemeToggle.astro';
 	
 	@media (max-width: 600px) {
 		nav {
-			flex-wrap: wrap;
+			flex-direction: column;
 			gap: 0.5em;
+			padding: 0.5em 0;
+		}
+		
+		.nav-left, .nav-center, .nav-right {
+			width: 100%;
+			justify-content: center;
+		}
+		
+		.nav-left {
+			order: 1;
+		}
+		
+		.nav-center {
+			order: 2;
+		}
+		
+		.nav-right {
+			order: 3;
 		}
 		
 		nav h2 {
@@ -97,10 +131,7 @@ import ThemeToggle from './ThemeToggle.astro';
 		}
 		
 		.internal-links {
-			order: 2;
-			width: 100%;
 			justify-content: center;
-			margin-top: 0.5em;
 		}
 		
 		.internal-links a {
