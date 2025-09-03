@@ -4,6 +4,10 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+* {
+	box-sizing: border-box;
+}
+
 :root {
 	--gray-0: #090b11;
 	--gray-50: #141925;
@@ -63,6 +67,7 @@ body {
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
+	overflow-x: hidden;
 	color: rgb(var(--gray-dark));
 	font-size: 17px;
 	line-height: 1.6;
@@ -74,6 +79,7 @@ main {
 	max-width: 800px;
 	margin: auto;
 	padding: 3em 2em;
+	box-sizing: border-box;
 }
 
 /* Profile Section */
@@ -422,6 +428,16 @@ hr {
 	
 	main {
 		padding: 1.5em 1em;
+		max-width: 100%;
+		width: 100%;
+	}
+	
+	.profile-section {
+		width: 100%;
+	}
+	
+	.profile-info, .profile-photo {
+		width: 100%;
 		max-width: 100%;
 	}
 	
