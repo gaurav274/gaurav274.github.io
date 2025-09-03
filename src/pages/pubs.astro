@@ -8,18 +8,29 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 const papers = [{
-	title: "Seiden: Revisiting Query Processing in Video Database Systems",
-	authors: ["Gaurav Tarlok Kakkar*", "Jaeho Bang*", "Pramod Chunduri", "Subrata Mitra", "Joy Arulraj"],
-	pub: "VLDB 2023",
-	link: "https://doi.org/10.14778/3598581.3598599",
+	title: "Is Long Context All You Need? Leveraging LLM's Extended Context for NL2SQL",
+	authors: ["Yeounoh Chung", "Gaurav Tarlok Kakkar", "Yu Gan", "Brenton Milne", "Fatma Ozcan"],
+	pub: "VLDB 2025",
+	link: "https://arxiv.org/abs/2501.12372",
 	},
 	{
-		title: "EVA: A Symbolic Approach to Accelerating Exploratory Video Analytics with Materialized Views",
-		authors: ["Gaurav Tarlok Kakkar*", "Zhuangdi Xu*", "Joy Arulraj", "Umakishore Ramachandran"],
-		pub: "SIGMOD 2022",
-		link: "https://dl.acm.org/doi/abs/10.1145/3514221.3526142"
+		title: "Aero: Adaptive Query Processing of ML Queries",
+		authors: ["Gaurav Tarlok Kakkar*", "Jiashen Cao*", "Aubhro Sengupta", "Joy Arulraj", "Hyesoon Kim"],
+		pub: "SIGMOD 2025",
+		link: "https://dl.acm.org/doi/10.1145/3725408"
 	},
-
+	{
+		title: "Chase-sql: Multi-path reasoning and preference optimized candidate selection in text-to-sql",
+		authors: ["Mohammadreza Pourreza", "Hailong Li", "Ruoxi Sun", "Yeounoh Chung", "Shayan Talaei", "Gaurav Tarlok Kakkar", "Yu Gan", "Amin Saberi", "Fatma Ozcan", "Sercan O Arik"],
+		pub: "ICLR 2025",
+		link: "https://proceedings.iclr.cc/paper_files/paper/2025/file/974ff7b5bf08dbf9400b5d599a39c77f-Paper-Conference.pdf"
+	},
+	{
+		title: "Seiden: Revisiting Query Processing in Video Database Systems",
+		authors: ["Gaurav Tarlok Kakkar*", "Jaeho Bang*", "Pramod Chunduri", "Subrata Mitra", "Joy Arulraj"],
+		pub: "VLDB 2023",
+		link: "https://doi.org/10.14778/3598581.3598599",
+		},
 	{
 		title: "EVA: An End-to-End Exploratory Video Analytics System",
 		authors: ["Gaurav Tarlok Kakkar", "et al."],
@@ -32,7 +43,15 @@ const papers = [{
 		authors: ["Gaurav Tarlok Kakkar", "Aryan Rajoria", "Myna Prasanna Kalluraya", "Ashmita Raju", "Jiashen Cao", "Kexin Rong", "Joy Arulraj"],
 		pub: "Demo Track, VLDB 2023",
 		link: "https://dl.acm.org/doi/abs/10.14778/3611540.3611626"
-	}
+	},
+	{
+		title: "EVA: A Symbolic Approach to Accelerating Exploratory Video Analytics with Materialized Views",
+		authors: ["Zhuangdi Xu*", "Gaurav Tarlok Kakkar*", "Joy Arulraj", "Umakishore Ramachandran"],
+		pub: "SIGMOD 2022",
+		link: "https://dl.acm.org/doi/abs/10.1145/3514221.3526142"
+	},
+
+	
 	]
 ---
 
@@ -42,43 +61,144 @@ const papers = [{
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style lang="scss">
-  ul {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 1rem;
-	padding:0rem;
+  .publications-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
 
+  .publication-category {
+    margin-bottom: 2.5em;
+  }
+
+  .publication-category h2 {
+    font-size: 1.5em;
+    color: var(--accent);
+    margin-bottom: 1em;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.3em;
+  }
+
+  .publication-item {
+    margin-bottom: 1.5em;
+    padding: 1em;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid var(--accent);
+  }
+
+  .publication-title {
+    margin-bottom: 0.5em;
+  }
+
+  .publication-title a {
+    color: rgb(var(--black));
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+  }
+
+  .publication-title a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .publication-authors {
+    margin-bottom: 0.3em;
+    color: rgb(var(--gray-dark));
+    font-size: 0.95em;
+  }
+
+  .publication-venue {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .note {
+    margin-top: 2em;
+    font-style: italic;
+    color: rgb(var(--gray));
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .publication-item {
+      padding: 0.8em;
+    }
+    
+    .publication-title a {
+      font-size: 1em;
+    }
   }
 </style>
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
 		<main>
+			<h1>Publications</h1>
 			
-			<h2>Papers</h2>
+			<div class="publications-container">
+				<div class="publication-category">
+					<h2>2025</h2>
+					{
+						papers.filter(paper => paper.pub.includes("2025")).map((paper, index) => (
+							<div class="publication-item">
+								<div class="publication-title">
+									<a href={paper.link} target="_blank">{paper.title}</a>
+								</div>
+								<div class="publication-authors" set:html={paper.authors.map((author) =>
+									author.includes("Gaurav")? `<strong>${author.replace("*", "").trim()}</strong>${author.includes("*") ? "*" : ""}`: author.trim()
+								).join(", ")}>
+								</div>
+								<div class="publication-venue">
+									<em>{paper.pub}</em>
+								</div>
+							</div>
+						))
+					}
+				</div>
 
-			<ul >
-				{
-					papers.map((paper, index) => (
-						<Card 
-							url={paper.link}
-							title={paper.title}
-							pub={paper.pub}
-							authors={ 
-								paper.authors
-								.map((author) =>
-									author.includes("Gaurav")? `<strong>${author.trim()}</strong>`: author.trim()
-								)
-								.join(", ")
-							}
-						/>
-					)
-				)
-				}
-			</ul>
+				<div class="publication-category">
+					<h2>2023</h2>
+					{
+						papers.filter(paper => paper.pub.includes("2023")).map((paper, index) => (
+							<div class="publication-item">
+								<div class="publication-title">
+									<a href={paper.link} target="_blank">{paper.title}</a>
+								</div>
+								<div class="publication-authors" set:html={paper.authors.map((author) =>
+									author.includes("Gaurav")? `<strong>${author.replace("*", "").trim()}</strong>${author.includes("*") ? "*" : ""}`: author.trim()
+								).join(", ")}>
+								</div>
+								<div class="publication-venue">
+									<em>{paper.pub}</em>
+								</div>
+							</div>
+						))
+					}
+				</div>
 
+				<div class="publication-category">
+					<h2>2022</h2>
+					{
+						papers.filter(paper => paper.pub.includes("2022")).map((paper, index) => (
+							<div class="publication-item">
+								<div class="publication-title">
+									<a href={paper.link} target="_blank">{paper.title}</a>
+								</div>
+								<div class="publication-authors" set:html={paper.authors.map((author) =>
+									author.includes("Gaurav")? `<strong>${author.replace("*", "").trim()}</strong>${author.includes("*") ? "*" : ""}`: author.trim()
+								).join(", ")}>
+								</div>
+								<div class="publication-venue">
+									<em>{paper.pub}</em>
+								</div>
+							</div>
+						))
+					}
+				</div>
+			</div>
 
-			<div style="font-weight: lighter; font-style: italic;">* order decided based on a coin toss</div>
+			<div class="note">* order decided based on a coin toss</div>
 		</main>
 		<Footer />
 	</body>

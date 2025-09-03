@@ -14,57 +14,84 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header title={SITE_TITLE} />
 		<main>
-    		<img width="200" height="100" src="/gtk.jpg" alt="😊" class="circle-img">
-			
-			
-			<h1>👋 Welcome!</h1>
-			<p>
-				I'm Gaurav Tarlok Kakkar, a computer science researcher and developer based out of Atlanta. My passion lies at the intersection of machine learning and data management, and I enjoy building systems that enhance the experiences of ML/DB practitioners.
-			</p>
-			<p>
+			<!-- Top Section: Profile/Header -->
+			<div class="profile-section">
+				<div class="profile-info">
+					<h2>Gaurav Tarlok Kakkar</h2>
+					<h2>CS Ph.D. Student @ Georgia Tech</h2>
+					<h3>Research Area: Data Systems for AI, NL2SQL</h3>
+					<p class="brief-intro">I am a final year Ph.D. student at Georgia Tech's College of Computing. My research focuses on the intersection of databases and machine learning, where I work on improving resource efficiency and enhancing the usability of data systems. I am passionate about building novel systems to accelerate workloads for emerging AI applications.</p>
+				</div>
+				<div class="profile-photo">
+					<img src="/gtk.jpg" alt="Gaurav Tarlok Kakkar" class="profile-image">
+				</div>
+			</div>
+
+			<hr class="section-divider">
+
+
+
+			<!-- Research Section -->
+			<div class="content-section">
+				<h2>Research</h2>
+				<div class="research-summary">
+					<p>I build efficient AI-powered data systems. My work lies at the intersection of databases and machine learning, with a focus on improving resource efficiency and enhancing usability. I started by rethinking how databases handle video analytics and extended those ideas to multimodal data. Most recently, my focus has shifted to making databases more usable and accessible through natural language. </p>
+				</div>
 				
-				I'm currently pursuing my Ph.D. in databases at the Georgia Institute of Technology under the guidance of <a href="https://faculty.cc.gatech.edu/~jarulraj/"> Joy Arulraj </a>. Before this, I served as a Software Engineer at <a href="https://adobe.com/"> Adobe</a>. I contributed to the database query engine at <a href="https://www.snowflake.com/">Snowflake</a>, an in-memory columnar cache for PostgreSQL at <a href="https://google.com/">Google</a>, and engaged in research at <a href="https://research.adobe.com/">Adobe Research</a>. 
-			</p>
-			<p>
-				Before pursuing my Ph.D., I earned my master's degree at Georgia Tech and completed my bachelor's at the Indian Institute of Technology, Kanpur. During my master's program, my encounter with database internals prompted me to initiate the development of <a href="https://github.com/georgia-tech-db/evadb">EvaDB</a>, which forms the foundation of my Ph.D. thesis. 
-
-				At IIT Kanpur, I was honored with the prestigious Dr. Elizabeth & Dr. Varkey Cherian Award for the <a href="https://github.com/yadavdev/iitk-hostel-mess"> best undergraduate project </a>.
-			</p>
-
-			<h3>Research</h4>
-				I'm involved in the following projects:
+				<div class="research-area">
+					<h3>Video & Multimodal Analytics</h3>
+					<p></p>
+					<ul>
+						<li>
+							<strong>EvaDB</strong> (
+								<a href="https://dl.acm.org/doi/abs/10.1145/3514221.3526142">SIGMOD 2022</a>,
+								<a href="https://dl.acm.org/doi/abs/10.1145/3595360.3595858">DEEM @ SIGMOD 2023</a>,
+								<a href="https://doi.org/10.14778/3598581.3598599">VLDB 2023 (Seiden)</a>
+							) — An <a href="https://github.com/georgia-tech-db/Eva">open-source</a> database system that enables users to query multimodal data using a SQL/dataframe‑like interface. Under the hood, it transparently provides AI UDF‑centric optimizations such as UDF result reuse, UDF reordering, and parallelization to improve hardware utilization. EvaDB has gained significant recognition, amassing approximately <strong>2.7K</strong> GitHub stars.
+						</li>
 				
-				<ul class="ul1">
-					<li class="li1">
-						<a href="https://github.com/georgia-tech-db/evadb"> EvaDB: database system tailored for accelerating emerging AI apps. </a>
-					</li>
-					
-					
-					<li class="li1">
-						Adaptive Query Engine for LLM/vision workloads.
-					</li>
+				
+						<li>
+							<strong>Aero</strong> (<a href="https://dl.acm.org/doi/10.1145/3725408">SIGMOD 2025</a>) — Argues that ML‑centric DBMSs should replace <em>static</em>, profile‑based optimizers with <em>adaptive query processing</em>. Aero notes that collecting accurate UDF (AI operator) statistics is costly and unreliable; instead, it measures selectivity and cost at runtime to reorder and route predicates on the fly, and employs dynamic scaling to improve resource utilization.
+						</li>
+					</ul>
+				</div>
 
-					<li class="li1">
-						Model-Aware Storage Management for large scale video analytics.
-					</li>
+				
 
-					<li class="li1">
-						<a href= "https://github.com/pchunduri6/rag-demystified" > LLM-powered retrieval-augmented generation (RAG) </a>
-					</li>
+				<div class="research-area">
+					<h3>Natural Language Interfaces to Databases (NL2SQL)</h3>
+					<p></p>
+					<ul>
+						<li>
+							<strong>PRISM</strong> (under review) — While NL2SQL research has largely focused on maximizing accuracy, the monetary cost of LLM-based pipelines has been overlooked. Real-world deployments must balance accuracy and cost, but the configuration space (LLM choice, prompting, schema linking) is highly interdependent and schema-sensitive. PRISM tackles this schema-aware tuning challenge.
+						</li>
+					</ul>
+				</div>
+			</div>
 
-					<li class="li1">
-						<a href="https://github.com/georgia-tech-db/seiden_submission">
-						Revisiting Query Processing for large scale video analytics
-						</a>
-					</li>
-				</ul>
+			<!-- Industrial Experience Section -->
+			<div class="content-section">
+				<h2>Industrial Experience</h2>
+				<div class="experience-item">
+					<p><strong class="company-name">Google Research</strong> — <em>Research Intern in Systems Research Group</em> | May 2024 – Dec 2024</p>
+				</div>
+				<div class="experience-item">
+					<p><strong class="company-name">Snowflake</strong> — <em>Software Development Intern in SQL Optimization Team</em> | Summer 2021</p>
+				</div>
+				<div class="experience-item">
+					<p><strong class="company-name">Google Cloud SQL</strong> — <em>Software Development Intern in Cloud SQL</em> | Summer 2020</p>
+				</div>
+				<div class="experience-item">
+					<p><strong class="company-name">Adobe</strong> — <em>Member of Technical Staff</em> | Jul 2017 – Aug 2019</p>
+				</div>
+				<div class="experience-item">
+					<p><strong class="company-name">Adobe Research</strong> — <em>Research Intern in Big Data Experience Lab</em> | May 2016 – July 2016</p>
+				</div>
+			</div>
 
-      
 
-			<h3>Get in Touch</h4>
-			<p>
-				You can get in touch with me via email at <a href="mailto:gtk@gatech.edu">gtk@gatech.edu</a>. Additionally, I'm active on <a href="https://twitter.com/GauravTKakkar" target="_blank">Twitter</a> and <a href="https://github.com/gaurav274" target="_blank">Github</a>.
-			</p>
+			
 		</main>
 		<Footer />
 	</body>

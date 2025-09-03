@@ -64,14 +64,222 @@ body {
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
+	font-size: 17px;
+	line-height: 1.6;
 }
+
+
 main {
-	width: 720px;
-	max-width: calc(100% - 2em);
+	width: 100%;
+	max-width: 800px;
 	margin: auto;
-	padding: 3em 1em;
+	padding: 3em 2em;
+}
+
+/* Profile Section */
+.profile-section {
+	display: flex;
+	gap: 3em;
+	align-items: flex-start;
+	margin-bottom: 2em;
+}
+
+.profile-info {
+	flex: 2;
+}
+
+.profile-info h1 {
+	font-size: 2.2em;
+	margin-bottom: 0.5em;
+	color: rgb(var(--black));
+}
+
+.profile-info h2 {
+	font-size: 1.6em;
+	margin-bottom: 0.5em;
+	color: var(--accent);
+}
+
+.profile-info h3 {
+	font-size: 1.3em;
+	margin-bottom: 1em;
+	color: rgb(var(--black));
+}
+
+.brief-intro {
+	font-size: 1.1em;
+	line-height: 1.6;
+	color: rgb(var(--gray-dark));
+}
+
+.profile-photo {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.profile-image {
+	width: 100%;
+	max-width: 250px;
+	height: auto;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 3px solid var(--accent);
+}
+
+/* Section Divider */
+.section-divider {
+	border: none;
+	border-top: 2px solid rgb(var(--gray-light));
+	margin: 2em 0;
+}
+
+/* Content Sections */
+.content-section {
+	margin-bottom: 2em;
+}
+
+.content-section h2 {
+	font-size: 1.4em;
+	margin-bottom: 0.8em;
+	color: rgb(var(--black));
+}
+
+.content-section h3 {
+	font-size: 1.2em;
+	margin-bottom: 0.5em;
+	color: rgb(var(--black));
+}
+
+.content-section p {
+	margin-bottom: 1em;
+	line-height: 1.6;
+	color: rgb(var(--gray-dark));
+}
+
+.content-section ul {
+	margin-left: 1.5em;
+	margin-bottom: 1em;
+}
+
+.content-section li {
+	margin-bottom: 0.5em;
+	color: rgb(var(--gray-dark));
+}
+
+/* Research Areas */
+.research-area {
+	margin-bottom: 1.5em;
+	padding-bottom: 0.5em;
+}
+
+.research-area:last-child {
+	margin-bottom: 0;
+}
+
+.research-area h3 {
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+
+.research-area h3:first-of-type,
+.research-area h3:last-of-type {
+	color: var(--accent);
+}
+
+.research-area ul {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.research-area li {
+	margin-bottom: 0.5em;
+	line-height: 1.5;
+}
+
+.research-area strong {
+	color: rgb(var(--black));
+	font-weight: 700;
+}
+
+/* Experience Items */
+.experience-item {
+	margin-bottom: 0.8em;
+}
+
+.experience-item p {
+	margin-bottom: 0.3em;
+	font-size: 0.95em;
+	color: rgb(var(--gray-dark));
+	line-height: 1.4;
+}
+
+.company-name {
+	color: var(--accent);
+}
+
+/* Publications Section (larger) */
+.publications-section {
+	background: rgb(var(--gray-light));
+	padding: 2em;
+	border-radius: 8px;
+	border: 1px solid rgb(var(--gray));
+}
+
+.publications-content {
+	background: white;
+	padding: 1.5em;
+	border-radius: 6px;
+}
+
+.publication-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.publication-list li {
+	margin-bottom: 1.5em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid rgb(var(--gray-light));
+	line-height: 1.5;
+}
+
+.publication-list li:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+.publication-list strong {
+	color: rgb(var(--black));
+	font-weight: 700;
+}
+
+.publication-list em {
+	font-style: italic;
+	color: rgb(var(--black));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.profile-section {
+		flex-direction: column;
+		gap: 2em;
+		text-align: center;
+	}
+	
+	.profile-photo {
+		order: -1;
+	}
+	
+	.profile-image {
+		max-width: 200px;
+	}
+	
+	.publications-section {
+		padding: 1.5em;
+	}
 }
 h1,
 h2,
